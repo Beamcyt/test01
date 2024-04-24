@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz</h1>
+            <h2>Question {{ question_number }}:</h2>
+        </header>
+        <div id="quiz-container">
+            <form id="quiz-form"method="post">
+                <div class="question">
+                    <p>{{ question.text }}</p>
+                    {% for image in question.images %}
+                        <img src="{{ url_for('static', filename=image) }}" alt="Question Image" style="max-width: 100%; height: auto;">
+                    {% endfor %}
+                    <textarea name="answer" id="answer" placeholder="Enter your answer" required rows="4" cols="40"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+                <div>
+                    <p>Time left: <span id="timer"></span> seconds</p>
+                </div>
+            </form>
+        </div>        
+    </div>
+    <script>
+        let timeLeft = 30;
+        let timerId = setInterval(countdown, 1000);
+
+        function countdown() {
+            if (timeLeft == -1) {
+                clearTimeout(timerId);
+                document.getElementById("quiz-form").submit();
+            } else {
+                document.getElementById('timer').innerHTML = timeLeft;
+                timeLeft--;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

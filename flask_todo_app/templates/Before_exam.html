@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Exam</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>!!!คำเตือน!!!</h1>
+        </header>
+        <div id="Before Exam" style="text-align: center;">
+            <form action="{{ url_for('index') }}" method="get">
+                <div class="Caution">
+                    <p>1.ห้ามนำโทรศัพท์มือถือ หรืออุปกรณ์สื่อสาร หรืออุปกรณ์อิเล็กทรอนิกส์ทุกชนิดเข้าห้องสอบโดยเด็ดขาด</p>
+                    <p>2.ใช้เวลาอย่างมีประสิทธิภาพ ผู้เข้าสอบควรจัดการเวลาเพื่อให้มีเวลาเพียงพอในการตอบคำถามทุกข้อ</p>
+                    <p>3.ตรวจสอบคำตอบก่อนส่งข้อสอบ ตรวจสอบคำตอบอีกครั้งเพื่อแน่ใจว่าคุณได้ตอบครบถ้วนถูกต้องทุกข้อ</p>
+                    <p>4.ผู้เข้าสอบควรเขียนข้อความหรือคำตอบที่เกี่ยวข้องกับโจทย์ที่กำหนดมาเพื่อให้ผลการทำนายระดับ CEFR เป็นไปตามความเป็นจริงมากที่สุด</p>
+                </div>
+                <button type="submit">Start</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
